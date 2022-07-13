@@ -1,5 +1,5 @@
 import React from 'react';
 
 export const App = () => (
-  `<div>Hello W!</div>`
+  <h1>Hello W!</h1>
 );
