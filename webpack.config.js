@@ -1,17 +1,21 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const HtmlWebpackPluginParams = {
-  template: 'public/index.html'
-}
+
+const plugins = [
+  new HtmlWebpackPlugin({
+    template: 'public/index.html'
+  })
+];
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  devtool: 'inline-source-map',
+  entry: './src/index.tsx',
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /(node_modules|bower_components)/,
         loader: "babel-loader"
       }
@@ -21,9 +25,9 @@ module.exports = {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
   },
-  plugins: [new HtmlWebpackPlugin(HtmlWebpackPluginParams)],
+  plugins,
   resolve: {
-    extensions: ['.jsx', '.js'],
+    extensions: ['.jsx', '.js', '.ts', '.tsx'],
   },
   devServer: {
     port: 9000,
