@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import './app.style.scss';
+import MyImage from './images/test.jpg';
 
 export const App = () => {
   console.log('APP');
@@ -17,8 +19,9 @@ export const App = () => {
       <h1>Hello World!</h1>
       <div>
         <label htmlFor="input">Label</label>
-        <input id="input" type="text" />
+        <input id="input" type="text" placeholder="placeholder" />
       </div>
+      <img src={MyImage} alt="" />
     </>
   );
 };

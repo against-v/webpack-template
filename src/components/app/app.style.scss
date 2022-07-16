@@ -1,0 +1,6 @@
+input {
+  font-weight: bold;
+  &::placeholder {
+    color: red;
+  }
+}
